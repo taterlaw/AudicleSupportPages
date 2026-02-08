@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Audicle - A news aggregation and text-to-speech app for iOS. Read and listen to your news from 50+ major outlets.">
+    <title>Audicle — Your news. Read aloud.</title>
+    <style>
+        /* ==================== Reset & Base Styles ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #FDF5E6;
+            color: #1A1A1A;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ==================== Typography ==================== */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-weight: 700;
+            color: #1A1A1A;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            letter-spacing: -0.005em;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        /* ==================== Container & Layout ==================== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        /* ==================== Header/Navigation ==================== */
+        header {
+            background-color: #FDF5E6;
+            border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #D12626;
+            text-decoration: none;
+            letter-spacing: -0.01em;
+        }
+
+        nav {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1A1A1A;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 0.25rem;
+        }
+
+        nav a:hover {
+            color: #D12626;
+            border-bottom-color: #D12626;
+        }
+
+        /* ==================== Hero Section ==================== */
+        .hero {
+            padding: 6rem 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 90vh;
+        }
+
+        .hero-content {
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            margin-bottom: 1.5rem;
+            color: #D12626;
+        }
+
+        .hero-tagline {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #1A1A1A;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            color: #1A1A1A;
+            opacity: 0.85;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: #D12626;
+            color: #FDF5E6;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-family: 'Georgia', serif;
+            font-weight: 600;
+            border: 2px solid #D12626;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            color: #D12626;
+        }
+
+        .hero-mockup {
+            width: 200px;
+            height: 400px;
+            background: linear-gradient(135deg, #E8DCC8 0%, #F5EFE0 100%);
+            border: 8px solid #1A1A1A;
+            border-radius: 30px;
+            margin: 2rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 60px rgba(26, 26, 26, 0.1);
+            font-size: 0.9rem;
+            color: #1A1A1A;
+            opacity: 0.7;
+        }
+
+        /* ==================== Features Section ==================== */
+        .features {
+            background-color: #FDF5E6;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            position: relative;
+            padding-bottom: 1.5rem;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: #D12626;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background-color: #FFFFFF;
+            padding: 2.5rem;
+            border: 1px solid rgba(26, 26, 26, 0.08);
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(26, 26, 26, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 12px 24px rgba(26, 26, 26, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #FDF5E6;
+            border: 2px solid #D12626;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: #1A1A1A;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        /* ==================== How It Works Section ==================== */
+        .how-it-works {
+            background-color: #FFFFFF;
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+            position: relative;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background-color: #D12626;
+            color: #FDF5E6;
+            font-size: 1.75rem;
+            font-weight: 700;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .step h3 {
+            margin-bottom: 1rem;
+        }
+
+        .step p {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-bottom: 0;
+        }
+
+        /* Connector line for desktop */
+        @media (min-width: 768px) {
+            .steps-container::before {
+                content: '';
+                position: absolute;
+                top: 30px;
+                left: 15%;
+                right: 15%;
+                height: 2px;
+                background: linear-gradient(to right, #D12626 0%, #D12626 50%, transparent 50%);
+                z-index: 0;
+            }
+
+            .step {
+                position: relative;
+                z-index: 1;
+            }
+        }
+
+        /* ==================== Footer ==================== */
+        footer {
+            background-color: #1A1A1A;
+            color: #FDF5E6;
+            padding: 3rem 0;
+            margin-top: 5rem;
+            border-top: 3px solid #D12626;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #D12626;
+        }
+
+        .footer-section p {
+            font-size: 1rem;
+            opacity: 0.85;
+        }
+
+        footer a {
+            color: #D12626;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        footer a:hover {
+            opacity: 0.7;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(209, 38, 38, 0.3);
+            padding-top: 2rem;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        .footer-bottom p {
+            font-size: 0.95rem;
+            opacity: 0.75;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ==================== Responsive Design ==================== */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
+            h3 {
+                font-size: 1.25rem;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            .hero {
+                padding: 3rem 0;
+                min-height: auto;
+            }
+
+            nav {
+                gap: 1.5rem;
+                font-size: 0.95rem;
+            }
+
+            .header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .steps-container {
+                gap: 2rem;
+            }
+
+            .steps-container::before {
+                display: none;
+            }
+
+            .hero-mockup {
+                width: 150px;
+                height: 300px;
+                margin: 1.5rem auto;
+            }
+
+            .section-title h2 {
+                padding-bottom: 1rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                padding: 0.875rem 2rem;
+                font-size: 1rem;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .feature-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 2rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ==================== Header ==================== -->
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo">Audicle</a>
+            <nav>
+                <a href="#features">Features</a>
+                <a href="#how">How It Works</a>
+                <a href="policy.html">Policy</a>
+                <a href="#footer">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==================== Hero Section ==================== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Audicle</h1>
+                <p class="hero-tagline">Your news. Read aloud.</p>
+                <p class="hero-description">
+                    Stay informed with news from 50+ major outlets. Read full articles in-app or listen with natural-sounding audio. Find stories that matter to you with intelligent keyword filtering.
+                </p>
+                <a href="#" class="cta-button">Download on the App Store</a>
+            </div>
+            <div class="hero-mockup">
+                [iPhone Mockup]
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== Features Section ==================== -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Audicle</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📰</div>
+                    <h3>50+ News Sources</h3>
+                    <p>Add RSS feeds or websites from major outlets worldwide. Customize your news diet with trusted publications.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3>Smart Article Extraction</h3>
+                    <p>Automatically pulls titles, images, and full article text from any link. No paywalls, no clutter.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎧</div>
+                    <h3>Listen to Articles</h3>
+                    <p>Natural-sounding text-to-speech lets you listen on the go. Perfect for commutes, workouts, or cooking.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Keyword Filters</h3>
+                    <p>Prioritize stories matching topics you care about. Never miss the news that matters to you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== How It Works Section ==================== -->
+    <section class="how-it-works" id="how">
+        <div class="container">
+            <div class="section-title">
+                <h2>How It Works</h2>
+            </div>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Add Your Sources</h3>
+                    <p>Choose from 50+ major news outlets or add your own RSS feeds and websites.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Browse & Save</h3>
+                    <p>Browse the latest articles, save favorites, and let keyword filters surface the stories you love.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Read or Listen</h3>
+                    <p>Read full articles in-app anytime, or listen with natural-sounding audio wherever you are.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== Footer ==================== -->
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Audicle</h4>
+                <p>News aggregation and text-to-speech for iOS.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <p><a href="#features">Features</a></p>
+                <p><a href="#how">How It Works</a></p>
+                <p><a href="policy.html">Usage Policy</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>Get in Touch</h4>
+                <p><a href="mailto:wishes.29-purest@icloud.com">wishes.29-purest@icloud.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Audicle. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

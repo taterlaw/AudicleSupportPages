@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Audicle Usage Policy and Terms of Service">
+    <title>Usage Policy — Audicle</title>
+    <style>
+        /* ==================== Reset & Base Styles ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #FDF5E6;
+            color: #1A1A1A;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ==================== Typography ==================== */
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-weight: 700;
+            color: #1A1A1A;
+            margin-bottom: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 2rem;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+            border-bottom: 3px solid #D12626;
+            padding-bottom: 0.5rem;
+            margin-top: 2.5rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            letter-spacing: -0.005em;
+            color: #D12626;
+        }
+
+        h4 {
+            font-size: 1.1rem;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        strong {
+            color: #D12626;
+            font-weight: 600;
+        }
+
+        em {
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        /* ==================== Container & Layout ==================== */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            padding: 3rem 0;
+        }
+
+        /* ==================== Header/Navigation ==================== */
+        header {
+            background-color: #FDF5E6;
+            border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #D12626;
+            text-decoration: none;
+            letter-spacing: -0.01em;
+        }
+
+        nav {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1A1A1A;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 0.25rem;
+        }
+
+        nav a:hover {
+            color: #D12626;
+            border-bottom-color: #D12626;
+        }
+
+        /* ==================== Main Content ==================== */
+        .policy-hero {
+            text-align: center;
+            padding: 3rem 0;
+            border-bottom: 2px solid rgba(26, 26, 26, 0.08);
+        }
+
+        .policy-hero h1 {
+            color: #D12626;
+            margin-bottom: 0.5rem;
+        }
+
+        .policy-hero p {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            margin-bottom: 0;
+        }
+
+        .last-updated {
+            text-align: center;
+            font-size: 0.95rem;
+            opacity: 0.7;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        .policy-content {
+            padding: 2rem 0;
+        }
+
+        .policy-section {
+            margin-bottom: 3rem;
+        }
+
+        .policy-section h2 {
+            first-letter-highlight: #D12626;
+        }
+
+        .toc {
+            background-color: #FFFFFF;
+            border-left: 4px solid #D12626;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .toc h3 {
+            color: #1A1A1A;
+            margin-top: 0;
+        }
+
+        .toc ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        .toc li {
+            margin: 0.5rem 0;
+        }
+
+        .toc a {
+            color: #D12626;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .toc a:hover {
+            opacity: 0.7;
+            text-decoration: underline;
+        }
+
+        /* ==================== Footer ==================== */
+        footer {
+            background-color: #1A1A1A;
+            color: #FDF5E6;
+            padding: 3rem 0;
+            margin-top: 5rem;
+            border-top: 3px solid #D12626;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #D12626;
+        }
+
+        .footer-section p {
+            font-size: 1rem;
+            opacity: 0.85;
+        }
+
+        footer a {
+            color: #D12626;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        footer a:hover {
+            opacity: 0.7;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(209, 38, 38, 0.3);
+            padding-top: 2rem;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        .footer-bottom p {
+            font-size: 0.95rem;
+            opacity: 0.75;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ==================== Responsive Design ==================== */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.1rem;
+            }
+
+            nav {
+                gap: 1.5rem;
+                font-size: 0.95rem;
+            }
+
+            .header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .policy-hero {
+                padding: 2rem 0;
+            }
+
+            .toc {
+                padding: 1.5rem;
+            }
+
+            section {
+                padding: 2rem 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            p {
+                font-size: 0.95rem;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            section {
+                padding: 1.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ==================== Header ==================== -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">Audicle</a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="policy.html">Policy</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==================== Main Content ==================== -->
+    <section class="policy-hero">
+        <div class="container">
+            <h1>Usage Policy</h1>
+            <p>Terms of Service and Legal Guidelines for Audicle</p>
+            <p class="last-updated">Last Updated: February 8, 2026</p>
+        </div>
+    </section>
+
+    <section class="policy-content">
+        <div class="container">
+            <!-- Table of Contents -->
+            <div class="toc">
+                <h3>Contents</h3>
+                <ul>
+                    <li><a href="#acceptance">Acceptance of Terms</a></li>
+                    <li><a href="#description">Service Description</a></li>
+                    <li><a href="#user-conduct">User Conduct</a></li>
+                    <li><a href="#content-rights">Content Rights & Attribution</a></li>
+                    <li><a href="#intellectual-property">Intellectual Property</a></li>
+                    <li><a href="#limitations">Limitations of Liability</a></li>
+                    <li><a href="#disclaimer">Disclaimers</a></li>
+                    <li><a href="#data-privacy">Data & Privacy</a></li>
+                    <li><a href="#modifications">Modifications to Service</a></li>
+                    <li><a href="#termination">Termination</a></li>
+                    <li><a href="#governing-law">Governing Law</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- 1. Acceptance of Terms -->
+            <div class="policy-section" id="acceptance">
+                <h2>1. Acceptance of Terms</h2>
+                <p>
+                    By downloading, installing, or using the Audicle application (the "App"), you agree to be bound by this Usage Policy (the "Policy"). If you do not agree to any part of this Policy, you may not use the App. Your continued use of the App following the posting of changes to this Policy will constitute your acceptance of those changes.
+                </p>
+            </div>
+
+            <!-- 2. Service Description -->
+            <div class="policy-section" id="description">
+                <h2>2. Service Description</h2>
+                <p>
+                    Audicle is a news aggregation and text-to-speech application for iOS devices. The App allows users to:
+                </p>
+                <ul>
+                    <li>Add RSS feeds and website URLs from 50+ major news outlets</li>
+                    <li>Retrieve and display article content (titles, images, text)</li>
+                    <li>Filter articles using keyword-based searches</li>
+                    <li>Convert article text to speech using natural-sounding audio synthesis</li>
+                </ul>
+                <p>
+                    Audicle is provided on an "as-is" basis. We make no guarantees regarding the accuracy, completeness, or timeliness of content retrieved from third-party sources.
+                </p>
+            </div>
+
+            <!-- 3. User Conduct -->
+            <div class="policy-section" id="user-conduct">
+                <h2>3. User Conduct</h2>
+                <p>
+                    You agree that you will not use Audicle for any illegal, harmful, or abusive purposes. Prohibited conduct includes but is not limited to:
+                </p>
+                <ul>
+                    <li>Attempting to reverse-engineer, decompile, or modify the App</li>
+                    <li>Using the App to scrape, harvest, or collect data in bulk for commercial purposes without authorization</li>
+                    <li>Interfering with or disrupting the App's servers, networks, or services</li>
+                    <li>Transmitting viruses, malware, or any code of a destructive nature</li>
+                    <li>Using the App in violation of any applicable laws or regulations</li>
+                    <li>Impersonating any person or entity</li>
+                    <li>Accessing or searching the App by any means other than our publicly supported interfaces</li>
+                </ul>
+            </div>
+
+            <!-- 4. Content Rights & Attribution -->
+            <div class="policy-section" id="content-rights">
+                <h2>4. Content Rights & Attribution</h2>
+                <p>
+                    <strong>No Content Ownership:</strong> Audicle does not create, author, own, or claim any rights to news content or information. Audicle is a republisher that aggregates and displays articles and news from third-party sources, including RSS feeds and news websites. All content, including articles, headlines, images, and news information, is owned by and remains the exclusive property of the original publishers and authors.
+                </p>
+                <p>
+                    <strong>RSS Feed Aggregation:</strong> Audicle functions as an RSS feed reader and news aggregator. We retrieve content directly from publishers' RSS feeds and publicly available sources and display them to you. We do not modify, claim ownership of, or assert any rights over this content beyond facilitating its display to our users.
+                </p>
+                <p>
+                    When using Audicle, you must respect the intellectual property rights of original content creators and publishers. We recommend:
+                </p>
+                <ul>
+                    <li>Reading content in compliance with the source publisher's terms of service</li>
+                    <li>Supporting original publishers when possible (subscribing, visiting their websites, etc.)</li>
+                    <li>Not republishing or redistributing articles obtained through Audicle without proper attribution and permission from the original publisher</li>
+                </ul>
+                <p>
+                    <strong>User Responsibility:</strong> You are solely responsible for ensuring your use of article content complies with applicable copyright laws and the publishers' terms of service. Audicle merely provides a conduit for accessing publicly available RSS content.
+                </p>
+            </div>
+
+            <!-- 5. Intellectual Property -->
+            <div class="policy-section" id="intellectual-property">
+                <h2>5. Intellectual Property</h2>
+                <p>
+                    The Audicle application, including its design, features, functionality, code, text-to-speech engine, and other original materials, are owned by or licensed to Audicle and are protected by copyright, trademark, and other intellectual property laws.
+                </p>
+                <p>
+                    You are granted a non-exclusive, non-transferable, revocable license to use Audicle solely for your personal, non-commercial purposes. You may not:
+                </p>
+                <ul>
+                    <li>Reproduce, distribute, or transmit Audicle in any form</li>
+                    <li>Create derivative works based on Audicle</li>
+                    <li>Remove or alter any copyright, trademark, or proprietary notices</li>
+                    <li>Rent, lease, or lend Audicle</li>
+                    <li>Use Audicle for commercial purposes</li>
+                </ul>
+            </div>
+
+            <!-- 6. Limitations of Liability -->
+            <div class="policy-section" id="limitations">
+                <h2>6. Limitations of Liability</h2>
+                <p>
+                    <strong>TO THE MAXIMUM EXTENT PERMITTED BY LAW, AUDICLE AND ITS DEVELOPERS, PUBLISHERS, AND AGENTS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, PUNITIVE, OR EXEMPLARY DAMAGES, INCLUDING BUT NOT LIMITED TO:</strong>
+                </p>
+                <ul>
+                    <li>Loss of data, revenue, or profits</li>
+                    <li>Business interruption</li>
+                    <li>Personal injury or property damage</li>
+                    <li>Any damages arising from delays, inaccuracies, or errors in content</li>
+                    <li>Unauthorized access to or modification of your transmissions or data</li>
+                    <li>Any actions we take or fail to take as a result of communications you send to us</li>
+                </ul>
+                <p>
+                    <strong>TOTAL LIABILITY:</strong> Our total cumulative liability to you for all claims arising from or relating to this Policy or your use of Audicle shall not exceed the amount you paid for the App (if any).
+                </p>
+            </div>
+
+            <!-- 7. Disclaimers -->
+            <div class="policy-section" id="disclaimer">
+                <h2>7. Disclaimers</h2>
+                <p>
+                    <strong>AS-IS BASIS:</strong> Audicle is provided on an "as-is" and "as-available" basis. We make no representations or warranties, express or implied, regarding:
+                </p>
+                <ul>
+                    <li>The App's functionality, accuracy, or reliability</li>
+                    <li>The accuracy, completeness, or timeliness of content retrieved from third-party sources</li>
+                    <li>The quality of text-to-speech output</li>
+                    <li>The availability or performance of third-party services (RSS feeds, news websites, servers)</li>
+                    <li>Compatibility with your device or iOS version</li>
+                </ul>
+                <p>
+                    <strong>NO WARRANTIES:</strong> We disclaim all warranties, express or implied, including any implied warranties of merchantability, fitness for a particular purpose, or non-infringement.
+                </p>
+                <p>
+                    <strong>THIRD-PARTY CONTENT:</strong> Audicle aggregates content from third-party sources. We do not endorse, control, or take responsibility for the accuracy, legality, or appropriateness of such content. You access third-party content at your own risk.
+                </p>
+            </div>
+
+            <!-- 8. Data & Privacy -->
+            <div class="policy-section" id="data-privacy">
+                <h2>8. Data & Privacy</h2>
+                <p>
+                    <strong>No Data Collection:</strong> Audicle does not collect, track, store, or transmit any personal data, usage data, analytics, or information about you. The App operates locally on your device. We do not:
+                </p>
+                <ul>
+                    <li>Collect app usage analytics or feature telemetry</li>
+                    <li>Track your reading habits or article preferences</li>
+                    <li>Store crash reports or error logs</li>
+                    <li>Gather device information or identifiers</li>
+                    <li>Build user profiles or behavioral data</li>
+                    <li>Transmit any personal or usage information to external servers</li>
+                </ul>
+                <p>
+                    <strong>Privacy:</strong> Audicle respects your privacy completely. Your use of the App is entirely private. Any articles you read, keywords you filter, or content you access remain on your device and are not transmitted, logged, or stored anywhere.
+                </p>
+                <p>
+                    <strong>Your Responsibility:</strong> You are responsible for maintaining the confidentiality of any saved articles, bookmarks, or preferences within the App. If you sync data across devices via Apple's iCloud or other services, you are responsible for securing access to your Apple ID and managing those services' privacy settings.
+                </p>
+            </div>
+
+            <!-- 9. Modifications to Service -->
+            <div class="policy-section" id="modifications">
+                <h2>9. Modifications to Service</h2>
+                <p>
+                    Audicle reserves the right to modify, suspend, or discontinue the App or any features at any time, with or without notice. We may also update this Policy at any time. We are not liable to you or any third party for any modification, suspension, or discontinuation of the App.
+                </p>
+                <p>
+                    Your continued use of the App after changes to this Policy constitutes your acceptance of the updated terms.
+                </p>
+            </div>
+
+            <!-- 10. Termination -->
+            <div class="policy-section" id="termination">
+                <h2>10. Termination</h2>
+                <p>
+                    We reserve the right to terminate or suspend your access to Audicle at any time, without cause or notice, if we believe you are in violation of this Policy or applicable laws. Upon termination, your right to use the App ceases immediately.
+                </p>
+            </div>
+
+            <!-- 11. Governing Law -->
+            <div class="policy-section" id="governing-law">
+                <h2>11. Governing Law</h2>
+                <p>
+                    This Policy and your use of Audicle are governed by and construed in accordance with the laws of the jurisdiction where you reside, without regard to its conflict of law principles. Any legal action or proceeding arising out of this Policy shall be subject to the exclusive jurisdiction of the courts in that jurisdiction.
+                </p>
+            </div>
+
+            <!-- 12. Contact Us -->
+            <div class="policy-section" id="contact">
+                <h2>12. Contact Us</h2>
+                <p>
+                    If you have questions about this Policy, our practices, or your experience with Audicle, please contact us at:
+                </p>
+                <p>
+                    <strong>Email:</strong> <a href="mailto:wishes.29-purest@icloud.com">wishes.29-purest@icloud.com</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== Footer ==================== -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Audicle</h4>
+                <p>News aggregation and text-to-speech for iOS.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="policy.html">Usage Policy</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>Get in Touch</h4>
+                <p><a href="mailto:wishes.29-purest@icloud.com">wishes.29-purest@icloud.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Audicle. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
