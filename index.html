@@ -171,20 +171,19 @@
             color: #D12626;
         }
 
-        .hero-mockup {
-            width: 200px;
-            height: 400px;
-            background: linear-gradient(135deg, #E8DCC8 0%, #F5EFE0 100%);
-            border: 8px solid #1A1A1A;
-            border-radius: 30px;
+        .hero-video {
+            max-width: 720px;
+            width: 100%;
             margin: 2rem auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 20px 60px rgba(26, 26, 26, 0.1);
-            font-size: 0.9rem;
-            color: #1A1A1A;
-            opacity: 0.7;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(26, 26, 26, 0.15);
+            overflow: hidden;
+        }
+
+        .hero-video video {
+            width: 100%;
+            display: block;
+            border-radius: 12px;
         }
 
         /* ==================== Features Section ==================== */
@@ -427,9 +426,8 @@
                 display: none;
             }
 
-            .hero-mockup {
-                width: 150px;
-                height: 300px;
+            .hero-video {
+                max-width: 100%;
                 margin: 1.5rem auto;
             }
 
@@ -504,10 +502,13 @@
                 <p class="hero-description">
                     Stay informed with news from 50+ major outlets. Read full articles in-app or listen with natural-sounding audio. Find stories that matter to you with intelligent keyword filtering.
                 </p>
-                <a href="#" class="cta-button">Download on the App Store</a>
+                <a href="https://apps.apple.com/us/app/audicle-news/id6758919506" class="cta-button">Download on the App Store</a>
             </div>
-            <div class="hero-mockup">
-                [iPhone Mockup]
+            <div class="hero-video">
+                <video controls playsinline preload="metadata">
+                    <source src="promo-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
     </section>
